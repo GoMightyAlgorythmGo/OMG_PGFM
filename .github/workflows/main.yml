@@ -20,10 +20,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements_pip.txt
 
-    - name: Run tests
-      run: |
-        python scripts/test_feature_extraction.py
-        python scripts/test_model_building.py
+    - name: Run feature extraction tests
+      run: python scripts/test_feature_extraction.py
+
+    - name: Run model building tests
+      run: python scripts/test_model_building.py
 
     - name: Update README
       run: powershell -File update_readme.ps1
