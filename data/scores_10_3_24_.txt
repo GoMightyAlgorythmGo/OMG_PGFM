@@ -1,0 +1,85 @@
+[24.02.24, 09:39:57] Marco Luca Hefti: F5 P4 T4 E5
+[24.02.24, 11:01:12] Marco Luca Hefti: F5 P3 T3 E6
+[24.02.24, 12:54:32] Marco Luca Hefti: F5 P5 T5 E5
+[24.02.24, 13:55:46] Marco Luca Hefti: F4 P5 T4 E5
+[24.02.24, 15:18:54] Marco Luca Hefti: F5 P6 T5 E6
+[24.02.24, 15:19:48] Marco Luca Hefti: D3
+[24.02.24, 15:40:26] Marco Luca Hefti: F4 P8 T6 E7 D4
+[24.02.24, 16:12:22] Marco Luca Hefti: F4 P4 T4 E6 D4
+[24.02.24, 17:09:37] Marco Luca Hefti: F5 P4 T4 E5 D4
+[24.02.24, 17:26:07] Marco Luca Hefti: F4 P4 T3 E5 D5
+[24.02.24, 17:50:33] Marco Luca Hefti: Feel_and_Mood=F
+[24.02.24, 17:50:52] Marco Luca Hefti: Productivity=P
+[24.02.24, 17:51:04] Marco Luca Hefti: Timeperception=T
+[24.02.24, 17:51:12] Marco Luca Hefti: Energy=E
+[24.02.24, 17:51:17] Marco Luca Hefti: Discomfort=D
+[25.02.24, 14:32:53] Marco Luca Hefti: F4 P5 T6 E5 D6
+[25.02.24, 15:30:09] Marco Luca Hefti: F4 P3 T5 E7 D5
+[25.02.24, 20:21:17] Marco Luca Hefti: F5 P4 T5 E4 D5
+[26.02.24, 08:39:00] Marco Luca Hefti: F4 P4 T4 E4 D3
+[26.02.24, 10:22:46] Marco Luca Hefti: F5 P6 T4 D6
+[26.02.24, 11:17:47] Marco Luca Hefti: F4 P4 T4 E6 D3
+[26.02.24, 14:15:32] Marco Luca Hefti: F6 P3 T3 E7 D4
+[26.02.24, 14:33:24] Marco Luca Hefti: D4 T6 P5
+[27.02.24, 13:51:04] Marco Luca Hefti: D6 P4 D4
+[27.02.24, 15:08:07] Marco Luca Hefti: F5 P3 T5 D4
+[27.02.24, 18:18:07] Marco Luca Hefti: F5 P4 T5 D7 E6
+[28.02.24, 08:59:28] Marco Luca Hefti: F5 D3 E6 P5
+[28.02.24, 10:40:39] Marco Luca Hefti: F5 P5 T5 E5 D4
+[28.02.24, 12:52:11] Marco Luca Hefti: F5 P4 T5 D5
+[28.02.24, 15:36:34] Marco Luca Hefti: F5 P5 T6 E5 D5
+[28.02.24, 17:16:11] Marco Luca Hefti: P3 D4
+[28.02.24, 17:16:20] Marco Luca Hefti: T5
+[28.02.24, 19:46:34] Marco Luca Hefti: E4 F4 D3 T4 P4
+[29.02.24, 09:19:37] Marco Luca Hefti: Procrastination=Pr
+[29.02.24, 09:20:39] Marco Luca Hefti: Pr3 E4 D6 T4 E4 P4
+[29.02.24, 11:49:30] Marco Luca Hefti: Pr2 P3 F6
+[29.02.24, 12:56:14] Marco Luca Hefti: T3 Pr2 D2 P4
+[29.02.24, 13:19:14] Marco Luca Hefti: D1 P1 F2
+[29.02.24, 13:27:12] Marco Luca Hefti: F5
+[29.02.24, 14:34:51] Marco Luca Hefti: F4 P4 T4 E6 D4 Pr3
+[29.02.24, 15:05:24] Marco Luca Hefti: F5 E5
+[29.02.24, 15:05:38] Marco Luca Hefti: D5 Pr4
+[29.02.24, 18:32:26] Marco Luca Hefti: F5 P6 T4 E5 D4 Pr6
+[29.02.24, 19:44:39] Marco Luca Hefti: F5 P9 T6 D5 PR9
+[29.02.24, 21:02:37] Marco Luca Hefti: P7 T5 Pr7
+[29.02.24, 23:57:44] Marco Luca Hefti: F4 P3 T4 E5 D3 Pr6
+[01.03.24, 08:07:34] Marco Luca Hefti: F5 P6 T6 E5 D6 Pr4
+[01.03.24, 09:54:53] Marco Luca Hefti: F4 P3 T3 D4 Pr2
+[01.03.24, 10:11:36] Marco Luca Hefti: F5 P5 Pr2 T4
+[01.03.24, 11:44:55] Marco Luca Hefti: P1 Pr1
+[01.03.24, 11:45:02] Marco Luca Hefti: F4
+[01.03.24, 11:45:07] Marco Luca Hefti: T3
+[01.03.24, 13:03:44] Marco Luca Hefti: F4 P4 T6 E5 D4 Pr3
+[01.03.24, 14:25:52] Marco Luca Hefti: F5 D4 Pr3 T5 P3
+[01.03.24, 15:33:11] Marco Luca Hefti: F4 P3 T4 E4 D6 Pr2
+[01.03.24, 21:50:05] Marco Luca Hefti: Boredom=B
+[01.03.24, 21:51:12] Marco Luca Hefti: Satisfaction=S
+[01.03.24, 21:51:25] Marco Luca Hefti: B6 S3
+[02.03.24, 08:46:56] Marco Luca Hefti: F5 P5 T4 E5 D6 Pr4
+[02.03.24, 08:57:27] Marco Luca Hefti: Pr3
+[02.03.24, 09:30:02] Marco Luca Hefti: P3 F7 Pr2
+[02.03.24, 09:30:59] Marco Luca Hefti: BrainSluggish_slow=BS
+[02.03.24, 12:23:10] Marco Luca Hefti: F6 P5 T4 E7 D7 Pr1
+[02.03.24, 12:23:34] Marco Luca Hefti: Bs4
+[02.03.24, 14:26:15] Marco Luca Hefti: F5 P7 T6 E6 D4 Pr6 S6 Bs6
+[02.03.24, 16:02:50] Marco Luca Hefti: Bs2
+[02.03.24, 16:03:31] Marco Luca Hefti: Pr2 D3 E3 P2 F3 B2
+[02.03.24, 16:43:05] Marco Luca Hefti: P5 Pr2 Bs3 B4 T4
+[02.03.24, 18:48:19] Marco Luca Hefti: Bs:5 B6 S5 T4 P4
+[02.03.24, 19:03:14] Marco Luca Hefti: D5 E5 P5 Pr3 T4
+[03.03.24, 21:40:30] Marco Luca Hefti: F4 P3 T5 E4 D4 Pr2 S2 Bs3 B2
+[04.03.24, 09:49:40] Marco Luca Hefti: F5 P3 T3 E4 D4 Pr2 S4 Bs3 B4
+[04.03.24, 13:57:56] Marco Luca Hefti: F5 P4 T5 E6 D3 Pr4 S3 Bs4 B6
+[04.03.24, 15:23:43] Marco Luca Hefti: F6 P4 T4 E5 D5 Pr6 S6 Bs3 B4
+[05.03.24, 14:43:34] Marco Luca Hefti: Bs4 F5 P5 T5 Pr2 D7 E6 S6 B6
+[05.03.24, 17:13:25] Marco Luca Hefti: F5 P4 T6 E5 D3 Pr2 S4 Bs3 B5
+[06.03.24, 09:38:46] Marco Luca Hefti: F4 P4 T4 E4 D5 Pr4 S4 Bs3 B5
+[06.03.24, 10:47:33] Marco Luca Hefti: T2
+[06.03.24, 12:55:21] Marco Luca Hefti: Bs2 T6 Pr2
+[07.03.24, 11:29:08] Marco Luca Hefti: F5 P4 T4 E5 D5 Pr3 S5 Bs4 B5
+[07.03.24, 19:29:26] Marco Luca Hefti: F5 P4 T4 E5 D4 Pr5 S4 Bs4 B6
+[08.03.24, 15:07:26] Marco Luca Hefti: F4 P2 T3 E4 D5 Pr2 S3 Bs3 B4
+[08.03.24, 20:04:33] Marco Luca Hefti: F5 P3 E4 D6 Pr3 S5 Bs3 B4
+[10.03.24, 14:34:51] Marco Luca Hefti: E3 P3 P2 Bs3
+[10.03.24, 20:58:26] Marco Luca Hefti: F5 P5 T4 E6 D7 Pr5 S4 Bs5 B3
