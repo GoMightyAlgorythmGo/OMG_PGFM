@@ -26,5 +26,6 @@ jobs:
     - name: Run model building tests
       run: python scripts/test_model_building.py
 
-    - name: Update README
-      run: powershell -File update_readme.ps1
+    - name: Generate documentation
+      run: |
+        codeium generate-docs .
