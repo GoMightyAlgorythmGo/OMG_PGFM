@@ -1,7 +1,7 @@
 # My Project
 
 ## Overview
-This project aims to build a machine learning model to process WhatsApp chat data.
+This PJ aims to get a machine learning foundation model built processing whatsApp chat data.
 
 ## Installation
 1. Clone the repository:
