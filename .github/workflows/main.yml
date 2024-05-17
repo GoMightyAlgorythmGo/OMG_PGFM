@@ -29,7 +29,7 @@ jobs:
       - name: Copy data directory
         run: |
           mkdir -p ./data
-          cp -r ./data ./data
+          cp -r ./data/* ./data/
 
       - name: Run feature extraction tests
         run: python scripts/test_feature_extraction.py
