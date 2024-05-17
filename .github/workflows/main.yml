@@ -26,10 +26,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements_pip.txt
 
-      - name: Copy data directory contents
+      - name: Ensure data directory
+        run: mkdir -p ./data
+
+      - name: Copy data files
         run: |
-          mkdir -p ./data
-          cp -r ./data/* ./data/
+          cp ./data/ProtocollChat2_15_5_24.txt ./data_copy/ProtocollChat2_15_5_24.txt
+          cp ./data/activitys_12_3_24.txt ./data_copy/activitys_12_3_24.txt
+          cp ./data/features.csv ./data_copy/features.csv
+          cp ./data/preprocessed_chat.csv ./data_copy/preprocessed_chat.csv
+          cp ./data/scores_10_3_24_.txt ./data_copy/scores_10_3_24_.txt
 
       - name: Run feature extraction tests
         run: python scripts/test_feature_extraction.py
