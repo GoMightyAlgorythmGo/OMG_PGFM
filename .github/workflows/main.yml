@@ -26,8 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements_pip.txt
 
-      - name: Ensure data directory
-        run: mkdir -p ./data
+      - name: Ensure data directories
+        run: |
+          mkdir -p ./data
+          mkdir -p ./data_copy
 
       - name: Copy data files
         run: |
