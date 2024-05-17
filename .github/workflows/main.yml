@@ -26,7 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements_pip.txt
 
-      - name: Copy data directory
+      - name: Copy data directory contents
         run: |
           mkdir -p ./data
           cp -r ./data/* ./data/
