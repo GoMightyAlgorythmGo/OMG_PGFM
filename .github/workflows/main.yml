@@ -1,31 +1,41 @@
 name: CI/CD Pipeline
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Set up job
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements_pip.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements_pip.txt
 
-    - name: Run feature extraction tests
-      run: python scripts/test_feature_extraction.py
+      - name: Copy data directory
+        run: |
+          mkdir -p ./data
+          cp -r ./data ./data
 
-    - name: Run model building tests
-      run: python scripts/test_model_building.py
+      - name: Run feature extraction tests
+        run: python scripts/test_feature_extraction.py
 
-    - name: Generate documentation
-      run: |
-        codeium generate-docs .
+      - name: Run model building tests
+        run: python scripts/test_model_building.py
+
+      - name: Update README
+        run: python scripts/update_readme.py
