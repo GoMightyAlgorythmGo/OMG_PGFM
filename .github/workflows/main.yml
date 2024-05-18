@@ -30,9 +30,3 @@ jobs:
 
     - name: Run model building tests
       run: python scripts/test_model_building.py
-
-    - name: Generate documentation
-      run: codeium-cli generate-docs
-
-    - name: Update README
-      run: codeium-cli update-readme
