@@ -1,91 +1,48 @@
-# My Project
+# OMG_PGFM
 
-## Overview
-This PJ aims to get a machine learning foundation model built processing whatsApp chat data.
+## Project Overview
+This project aims to create a machine learning foundation model for processing WhatsApp chat data. The goal is to preprocess, analyze, and extract features from the data to build predictive models.
 
-## Installation
-1. Clone the repository:
-   \\\ash
-   git clone https://github.com/GoMightyAlgorythmGo/OMG_PGFM
-   \\\
-2. Navigate to the project directory:
-   \\\ash
-   cd my_project
-   \\\
-3. Install dependencies:
-   \\\ash
-   conda activate myenv
-   conda install --file requirements.txt
-   \\\
+## Project Structure
+- **data**: Directory containing raw and processed data files.
+- **notebooks**: Jupyter notebooks for data preprocessing and analysis.
+- **scripts**: Python scripts for feature extraction and model building.
+- **docs**: Project documentation files.
+- **models**: Trained machine learning models.
+
+## Setup Instructions
+1. Clone the repository.
+2. Create a virtual environment and activate it.
+3. Install the required packages:
+    ```sh
+    conda install --file requirements.txt
+    ```
+4. Create the necessary directories and placeholder files:
+    ```sh
+    mkdir -p ./data
+    echo "Sample content for ProtocollChat2_15_5_24.txt" > ./data/ProtocollChat2_15_5_24.txt
+    echo "Sample content for activitys_12_3_24.txt" > ./data/activitys_12_3_24.txt
+    echo "feature1,feature2,feature3\n1,2,3" > ./data/features.csv
+    echo "Sample content for preprocessed_chat.csv" > ./data/preprocessed_chat.csv
+    echo "Sample content for scores_10_3_24_.txt" > ./data/scores_10_3_24_.txt
+    ```
 
 ## Usage
-1. Run the Jupyter Notebook:
-   \\\ash
-   jupyter notebook
-   \\\
-2. Open the notebooks directory and run the desired notebook.
+1. Run the data preprocessing script:
+    ```sh
+    python scripts/preprocess_data.py
+    ```
+2. Run the feature extraction script:
+    ```sh
+    python scripts/feature_extraction.py
+    ```
+3. Train the machine learning model:
+    ```sh
+    python scripts/train_model.py
+    ```
 
-## Completed Tasks
-- Installed Anaconda
-- Created Virtual Environment
-- Installed Jupyter Notebook
-- Installed VS Code and GitHub Copilot
-- Created Project Directories (data, notebooks, scripts, docs, models)
-- Initialized Git Repository
-- Pushed Initial Commit to GitHub
-- Developed and Ran Data Preprocessing Notebook
-- Developed and Ran Feature Extraction Notebook
-- Developed and Ran Model Building Notebook
-- Developed and Ran Model Evaluation Notebook
+## Contributing
+Please read the [CONTRIBUTING.md](docs/CONTRIBUTING.md) file for guidelines on contributing to this project.
 
-## Remaining Tasks with Percentages
-### Automated Testing and Documentation (10%)
-- Create additional test scripts for feature extraction, model building, and model evaluation.
-- Ensure comprehensive coverage of all critical functions.
-- Integrate tests with CI/CD to automatically run tests on each commit.
-
-### Further Model Development and Hyperparameter Tuning (30%)
-- Experiment with different models and hyperparameters to improve accuracy.
-- Implement cross-validation and other evaluation techniques.
-
-### Data Visualization and Analysis (20%)
-- Create visualizations to better understand the data and model performance.
-- Analyze feature importance and model insights.
-
-### Deployment and Monitoring (20%)
-- Deploy the model to a production environment.
-- Set up monitoring and logging to track model performance over time.
-
-## High-Level Plan
-1. **Automated Testing and Documentation (10%)**
-   - Create additional test scripts for feature extraction, model building, and model evaluation.
-   - Ensure comprehensive coverage of all critical functions.
-   - Integrate tests with CI/CD to automatically run tests on each commit.
-
-2. **Further Model Development and Hyperparameter Tuning (30%)**
-   - Experiment with different models and hyperparameters to improve accuracy.
-   - Implement cross-validation and other evaluation techniques.
-
-3. **Data Visualization and Analysis (20%)**
-   - Create visualizations to better understand the data and model performance.
-   - Analyze feature importance and model insights.
-
-4. **Deployment and Monitoring (20%)**
-   - Deploy the model to a production environment.
-   - Set up monitoring and logging to track model performance over time.
-
-## Summary of Current Progress
-### Project Setup:
-- Installed necessary tools: Anaconda, Jupyter Notebook, VS Code, GitHub Copilot.
-- Created project directories.
-- Initialized Git repository and pushed initial commit to GitHub.
-
-### Data Preprocessing:
-- Developed and ran a notebook for preprocessing WhatsApp chat data.
-
-### Next Steps:
-- Feature Extraction
-- Model Building
-- Model Evaluation
-- Automated Testing
-- Documentation
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
