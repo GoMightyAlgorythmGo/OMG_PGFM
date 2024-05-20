@@ -10,5 +10,5 @@ def preprocess_whatsapp_chats(directory_path):
 
 # Test case
 def test_preprocess():
-    df = preprocess_whatsapp_chats('../data')
+    model = build_and_train_model('./data/preprocessed_chat.csv', './models/logistic_model.pkl')
     assert not df.empty  # Modify according to your actual test conditions
