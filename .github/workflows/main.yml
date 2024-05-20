@@ -1,32 +1,54 @@
 name: CI/CD Pipeline
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.9'
 
     - name: Install dependencies
       run: |
-        pip install -r requirements_pip.txt
-        mkdir -p ./data_copy
-        cp ./data/ProtocollChat2_15_5_24.txt ./data_copy/ProtocollChat2_15_5_24.txt
-        cp ./data/activitys_12_3_24.txt ./data_copy/activitys_12_3_24.txt
-        cp ./data/features.csv ./data_copy/features.csv
-        cp ./data/preprocessed_chat.csv ./data_copy/preprocessed_chat.csv
-        cp ./data/scores_10_3_24_.txt ./data_copy/scores_10_3_24_.txt
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install sphinx
 
-    - name: Run feature extraction tests
-      run: python scripts/test_feature_extraction.py
+    - name: Run tests
+      run: |
+        python -m unittest discover tests
+        python scripts/test_feature_extraction.py
+        python scripts/test_model_building.py
 
-    - name: Run model building tests
-      run: python scripts/test_model_building.py
+    - name: Build documentation
+      run: |
+        sphinx-build -b html docs/source docs/build
+
+    - name: Upload documentation
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs/build
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .
+        git commit -m "Automated update of documentation"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
