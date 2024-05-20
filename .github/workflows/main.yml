@@ -49,6 +49,4 @@ jobs:
         git config --global user.email 'github-actions@github.com'
         git add .
         git commit -m "Automated update of documentation"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git push https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
