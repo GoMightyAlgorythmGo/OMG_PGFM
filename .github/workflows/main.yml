@@ -4,29 +4,48 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        python -m unittest discover tests
+
+    - name: Build documentation
+      run: |
         pip install sphinx
-    - name: Build Docs
-      run: sphinx-build -b html docs/source docs/build
-    - name: Commit and Push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
+        sphinx-build -b html docs/source docs/build
+
+    - name: Deploy documentation
+      if: success()
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add docs/build
+        cd docs/build
+        git init
+        git remote add origin https://github.com/GoMightyAlgorythmGo/OMG_PGFM.git
+        git add .
         git commit -m "Automated update of documentation"
-        git push origin master
+        git push -f origin master:gh-pages
+
+env:
+  GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
