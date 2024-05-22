@@ -4,40 +4,39 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install sphinx
         pip install -r requirements.txt
-        pip install sphinx  # Add this line to install Sphinx
 
     - name: Build documentation
       run: |
         sphinx-build -b html docs/source docs/build
 
     - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        cd docs/build
-        git init
-        git add .
+        git add docs/build
         git commit -m "Automated update of documentation"
-        git branch -M master
-        git remote add origin https://github.com/GoMightyAlgorythmGo/OMG_PGFM.git
-        git push -u origin master --force
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
