@@ -46,7 +46,7 @@ jobs:
 
     - name: Commit and push changes
       env:
-        CLASSICAL_PAT: ${{ secrets.CLASSICAL_PAT }}
+        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
       run: |
         git add docs/build
         git commit -m "Automated update of documentation"
