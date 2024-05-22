@@ -13,25 +13,65 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.9'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install sphinx
-        pip install -r requirements.txt
 
     - name: Build documentation
-      run: |
-        sphinx-build -b html docs/source docs/build
+      run: sphinx-build -b html docs/source docs/build
 
-    - name: Commit and push changes
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add docs/build
+        git commit -m "Automated update of documentation"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx
+
+    - name: Build documentation
+      run: sphinx-build -b html docs/source docs/build
+
+    - name: Commit changes
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
