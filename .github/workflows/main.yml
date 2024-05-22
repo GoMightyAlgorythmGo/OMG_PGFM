@@ -46,8 +46,8 @@ jobs:
 
     - name: Commit and push changes
       env:
-        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
+        CLASSICAL_PAT: ${{ secrets.CLASSICAL_PAT }}
       run: |
         git add docs/build
         git commit -m "Automated update of documentation"
-        git push origin master
+        git push https://GoMightyAlgorythmGo:${{ secrets.CLASSICAL_PAT }}@github.com/GoMightyAlgorythmGo/OMG_PGFM.git
