@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for the full-text search.
  *
+<<<<<<< Updated upstream
  * :copyright: Copyright 2007-2024 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2022 by the Sphinx team, see AUTHORS.
+>>>>>>> Stashed changes
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -57,14 +61,18 @@ const _removeChildren = (element) => {
 const _escapeRegExp = (string) =>
   string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 
+<<<<<<< Updated upstream
 const _displayItem = (item, searchTerms, highlightTerms) => {
+=======
+const _displayItem = (item, highlightTerms, searchTerms) => {
+>>>>>>> Stashed changes
   const docBuilder = DOCUMENTATION_OPTIONS.BUILDER;
   const docFileSuffix = DOCUMENTATION_OPTIONS.FILE_SUFFIX;
   const docLinkSuffix = DOCUMENTATION_OPTIONS.LINK_SUFFIX;
   const showSearchSummary = DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY;
   const contentRoot = document.documentElement.dataset.content_root;
 
-  const [docName, title, anchor, descr, score, _filename] = item;
+  const [docName, title, anchor, descr] = item;
 
   let listItem = document.createElement("li");
   let requestUrl;
@@ -82,12 +90,18 @@ const _displayItem = (item, searchTerms, highlightTerms) => {
     requestUrl = contentRoot + docName + docFileSuffix;
     linkUrl = docName + docLinkSuffix;
   }
+  const params = new URLSearchParams();
+  params.set("highlight", [...highlightTerms].join(" "));
   let linkEl = listItem.appendChild(document.createElement("a"));
-  linkEl.href = linkUrl + anchor;
-  linkEl.dataset.score = score;
+  linkEl.href = linkUrl + "?" + params.toString() + anchor;
   linkEl.innerHTML = title;
+<<<<<<< Updated upstream
   if (descr) {
     listItem.appendChild(document.createElement("span")).innerHTML =
+=======
+  if (descr)
+    listItem.appendChild(document.createElement("span")).innerText =
+>>>>>>> Stashed changes
       " (" + descr + ")";
     // highlight search terms in the description
     if (SPHINX_HIGHLIGHT_ENABLED)  // set in sphinx_highlight.js
@@ -99,7 +113,11 @@ const _displayItem = (item, searchTerms, highlightTerms) => {
       .then((data) => {
         if (data)
           listItem.appendChild(
+<<<<<<< Updated upstream
             Search.makeSearchSummary(data, searchTerms, anchor)
+=======
+            Search.makeSearchSummary(data, searchTerms, highlightTerms)
+>>>>>>> Stashed changes
           );
         // highlight search terms in the summary
         if (SPHINX_HIGHLIGHT_ENABLED)  // set in sphinx_highlight.js
@@ -122,15 +140,26 @@ const _finishSearch = (resultCount) => {
 const _displayNextItem = (
   results,
   resultCount,
+<<<<<<< Updated upstream
   searchTerms,
   highlightTerms,
+=======
+  highlightTerms,
+  searchTerms
+>>>>>>> Stashed changes
 ) => {
   // results left, load the summary and display it
   // this is intended to be dynamic (don't sub resultsCount)
   if (results.length) {
+<<<<<<< Updated upstream
     _displayItem(results.pop(), searchTerms, highlightTerms);
     setTimeout(
       () => _displayNextItem(results, resultCount, searchTerms, highlightTerms),
+=======
+    _displayItem(results.pop(), highlightTerms, searchTerms);
+    setTimeout(
+      () => _displayNextItem(results, resultCount, highlightTerms, searchTerms),
+>>>>>>> Stashed changes
       5
     );
   }
@@ -176,6 +205,7 @@ const Search = {
   _queued_query: null,
   _pulse_status: -1,
 
+<<<<<<< Updated upstream
   htmlToText: (htmlString, anchor) => {
     const htmlElement = new DOMParser().parseFromString(htmlString, 'text/html');
     for (const removalQuery of [".headerlinks", "script", "style"]) {
@@ -191,6 +221,13 @@ const Search = {
     }
 
     // if anchor not specified or not found, fall back to main content
+=======
+  htmlToText: (htmlString) => {
+    const htmlElement = document
+      .createRange()
+      .createContextualFragment(htmlString);
+    _removeChildren(htmlElement.querySelectorAll(".headerlink"));
+>>>>>>> Stashed changes
     const docContent = htmlElement.querySelector('[role="main"]');
     if (docContent) return docContent.textContent;
 
@@ -268,7 +305,14 @@ const Search = {
     else Search.deferQuery(query);
   },
 
+<<<<<<< Updated upstream
   _parseQuery: (query) => {
+=======
+  /**
+   * execute search (requires search index to be loaded)
+   */
+  query: (query) => {
+>>>>>>> Stashed changes
     // stem the search terms and add them to the correct list
     const stemmer = new Stemmer();
     const searchTerms = new Set();
@@ -296,10 +340,6 @@ const Search = {
       }
     });
 
-    if (SPHINX_HIGHLIGHT_ENABLED) {  // set in sphinx_highlight.js
-      localStorage.setItem("sphinx_highlight_terms", [...highlightTerms].join(" "))
-    }
-
     // console.debug("SEARCH: searching for:");
     // console.info("required: ", [...searchTerms]);
     // console.info("excluded: ", [...excludedTerms]);
@@ -324,6 +364,7 @@ const Search = {
 
     _removeChildren(document.getElementById("search-progress"));
 
+<<<<<<< Updated upstream
     const queryLower = query.toLowerCase().trim();
     for (const [title, foundTitles] of Object.entries(allTitles)) {
       if (title.toLowerCase().trim().includes(queryLower) && (queryLower.length >= title.length/2)) {
@@ -363,6 +404,8 @@ const Search = {
       }
     }
 
+=======
+>>>>>>> Stashed changes
     // lookup as object
     objectTerms.forEach((term) =>
       normalResults.push(...Search.performObjectSearch(term, objectTerms))
@@ -410,7 +453,11 @@ const Search = {
     // console.info("search results:", Search.lastresults);
 
     // print the results
+<<<<<<< Updated upstream
     _displayNextItem(results, results.length, searchTerms, highlightTerms);
+=======
+    _displayNextItem(results, results.length, highlightTerms, searchTerms);
+>>>>>>> Stashed changes
   },
 
   /**
@@ -491,8 +538,8 @@ const Search = {
     // prepare search
     const terms = Search._index.terms;
     const titleTerms = Search._index.titleterms;
-    const filenames = Search._index.filenames;
     const docNames = Search._index.docnames;
+    const filenames = Search._index.filenames;
     const titles = Search._index.titles;
 
     const scoreMap = new Map();
@@ -592,15 +639,21 @@ const Search = {
   /**
    * helper function to return a node containing the
    * search summary for a given text. keywords is a list
-   * of stemmed words.
+   * of stemmed words, highlightWords is the list of normal, unstemmed
+   * words. the first one is used to find the occurrence, the
+   * latter for highlighting it.
    */
+<<<<<<< Updated upstream
   makeSearchSummary: (htmlText, keywords, anchor) => {
     const text = Search.htmlToText(htmlText, anchor);
+=======
+  makeSearchSummary: (htmlText, keywords, highlightWords) => {
+    const text = Search.htmlToText(htmlText).toLowerCase();
+>>>>>>> Stashed changes
     if (text === "") return null;
 
-    const textLower = text.toLowerCase();
     const actualStartPosition = [...keywords]
-      .map((k) => textLower.indexOf(k.toLowerCase()))
+      .map((k) => text.indexOf(k.toLowerCase()))
       .filter((i) => i > -1)
       .slice(-1)[0];
     const startWithContext = Math.max(actualStartPosition - 120, 0);
@@ -608,9 +661,13 @@ const Search = {
     const top = startWithContext === 0 ? "" : "...";
     const tail = startWithContext + 240 < text.length ? "..." : "";
 
-    let summary = document.createElement("p");
+    let summary = document.createElement("div");
     summary.classList.add("context");
-    summary.textContent = top + text.substr(startWithContext, 240).trim() + tail;
+    summary.innerText = top + text.substr(startWithContext, 240).trim() + tail;
+
+    highlightWords.forEach((highlightWord) =>
+      _highlightText(summary, highlightWord, "highlighted")
+    );
 
     return summary;
   },
