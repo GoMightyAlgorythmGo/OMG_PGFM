@@ -13,10 +13,19 @@ def get_card_id(card_name):
         "token": TRELLO_API_TOKEN
     }
     response = requests.get(url, params=query)
-    cards = response.json()
-    for card in cards:
-        if card["name"] == card_name:
-            return card["id"]
+    try:
+        response.raise_for_status()
+        cards = response.json()
+        for card in cards:
+            if card["name"] == card_name:
+                return card["id"]
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+    except requests.exceptions.RequestException as req_err:
+        print(f"Request error occurred: {req_err}")
+    except ValueError as json_err:
+        print(f"JSON decode error occurred: {json_err}")
+        print(f"Response content: {response.text}")
     return None
 
 def move_card(card_id):
@@ -27,7 +36,17 @@ def move_card(card_id):
         "token": TRELLO_API_TOKEN
     }
     response = requests.put(url, params=query)
-    return response.json()
+    try:
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+    except requests.exceptions.RequestException as req_err:
+        print(f"Request error occurred: {req_err}")
+    except ValueError as json_err:
+        print(f"JSON decode error occurred: {json_err}")
+        print(f"Response content: {response.text}")
+    return None
 
 if __name__ == "__main__":
     card_name = "Automated Documentation Update"  # Adjust as needed
