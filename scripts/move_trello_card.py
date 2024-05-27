@@ -59,7 +59,7 @@ def move_card(card_id):
     response = requests.put(url, params=query)
     try:
         response.raise_for_status()
-        if response.status_code == 200:
+        if response.status_code == 200):
             result = response.json()
             print(f"Successfully moved card. Response: {result}")
             return result
