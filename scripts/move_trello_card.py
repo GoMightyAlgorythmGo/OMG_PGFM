@@ -6,6 +6,12 @@ TRELLO_API_TOKEN = os.getenv("TRELLO_API_TOKEN")
 TRELLO_BOARD_ID = "6651f196a10ff5d856b49057"
 TRELLO_DONE_LIST_ID = os.getenv("DONE_LIST_ID")
 
+print("Environment Variables:")
+print(f"TRELLO_API_KEY: {TRELLO_API_KEY}")
+print(f"TRELLO_API_TOKEN: {TRELLO_API_TOKEN}")
+print(f"TRELLO_BOARD_ID: {TRELLO_BOARD_ID}")
+print(f"TRELLO_DONE_LIST_ID: {TRELLO_DONE_LIST_ID}")
+
 def get_card_id(card_name):
     if not TRELLO_API_KEY or not TRELLO_API_TOKEN or not TRELLO_BOARD_ID:
         print("Environment variables for Trello API are not set correctly.")
@@ -16,6 +22,7 @@ def get_card_id(card_name):
         "key": TRELLO_API_KEY,
         "token": TRELLO_API_TOKEN
     }
+    print(f"Requesting card details from URL: {url}")
     response = requests.get(url, params=query)
     try:
         response.raise_for_status()
@@ -23,9 +30,11 @@ def get_card_id(card_name):
             cards = response.json()
             for card in cards:
                 if card["name"] == card_name:
+                    print(f"Found card: {card_name} with ID: {card['id']}")
                     return card["id"]
         else:
-            print(f"Unexpected status code received: {response.status_code}")
+            print(f"Unexpected
+status code received: {response.status_code}")
             print(f"Response content: {response.text}")
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
@@ -47,6 +56,7 @@ def move_card(card_id):
         "key": TRELLO_API_KEY,
         "token": TRELLO_API_TOKEN
     }
+    print(f"Moving card ID {card_id} to list ID {TRELLO_DONE_LIST_ID}")
     response = requests.put(url, params=query)
     try:
         response.raise_for_status()
