@@ -60,7 +60,9 @@ def move_card(card_id):
     try:
         response.raise_for_status()
         if response.status_code == 200:
-            return response.json()
+            result = response.json()
+            print(f"Successfully moved card. Response: {result}")
+            return result
         else:
             print(f"Unexpected status code received: {response.status_code}")
             print(f"Response content: {response.text}")
