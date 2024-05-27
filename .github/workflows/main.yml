@@ -26,7 +26,16 @@ jobs:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
           TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
-      - name: Send notification
+      - name: Move Trello card on success
+        if: success()
+        run: |
+          python scripts/move_trello_card.py
+        env:
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
+          CARD_ID: ${{ secrets.TRELLO_CARD_ID }}
+          DONE_LIST_ID: ${{ secrets.TRELLO_DONE_LIST_ID }}
+      - name: Send notification on failure
         if: failure()
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"Documentation update failed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
