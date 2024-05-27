@@ -15,8 +15,8 @@ def get_card_id(card_name):
     response = requests.get(url, params=query)
     cards = response.json()
     for card in cards:
-        if card['name'] == card_name:
-            return card['id']
+        if card["name"] == card_name:
+            return card["id"]
     return None
 
 def move_card(card_id):
@@ -30,7 +30,7 @@ def move_card(card_id):
     return response.json()
 
 if __name__ == "__main__":
-    card_name = "Automated Documentation Update"
+    card_name = "Automated Documentation Update"  # Adjust as needed
     card_id = get_card_id(card_name)
     if card_id:
         result = move_card(card_id)
