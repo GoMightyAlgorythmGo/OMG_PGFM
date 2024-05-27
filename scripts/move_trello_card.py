@@ -33,8 +33,7 @@ def get_card_id(card_name):
                     print(f"Found card: {card_name} with ID: {card['id']}")
                     return card["id"]
         else:
-            print(f"Unexpected
-status code received: {response.status_code}")
+            print(f"Unexpected status code received: {response.status_code}")
             print(f"Response content: {response.text}")
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
