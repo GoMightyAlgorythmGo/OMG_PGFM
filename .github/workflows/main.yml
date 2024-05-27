@@ -33,8 +33,7 @@ jobs:
         env:
           TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
           TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
-          CARD_ID: ${{ secrets.TRELLO_CARD_ID }}
-          DONE_LIST_ID: ${{ secrets.TRELLO_DONE_LIST_ID }}
+          DONE_LIST_ID: ${{ secrets.DONE_LIST_ID }}
       - name: Send notification on failure
         if: failure()
         run: |
