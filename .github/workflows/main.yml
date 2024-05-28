@@ -24,7 +24,7 @@ jobs:
           pytest
       - name: Generate Documentation
         run: |
-          python scripts/auto_update_docs.py
+          sphinx-build -b html docs/ docs/_build/
         env:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
