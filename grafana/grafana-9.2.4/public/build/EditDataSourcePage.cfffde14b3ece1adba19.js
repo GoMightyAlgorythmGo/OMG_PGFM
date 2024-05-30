@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[1477],{60714:(a,e,n)=>{n.r(e),n.d(e,{EditDataSourcePage:()=>u,default:()=>d});n(68404);var s=n(90894),r=n(90919),t=n(52772),c=n(45916);function u(a){const e=a.match.params.uid,n=new URLSearchParams(a.location.search).get("page"),u=(0,t.MF)(e,n);return(0,c.jsx)(s.T,{navId:"datasources",pageNav:u.main,children:(0,c.jsx)(s.T.Contents,{children:(0,c.jsx)(r.H,{uid:e,pageId:n})})})}const d=u}}]);
+//# sourceMappingURL=EditDataSourcePage.cfffde14b3ece1adba19.js.map

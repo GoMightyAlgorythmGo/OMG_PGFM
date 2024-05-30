@@ -1,0 +1,117 @@
+logger=cleanup t=2024-05-29T10:53:01.0765654+02:00 level=info msg="Completed cleanup jobs" duration=269.2243ms
+logger=cleanup t=2024-05-29T11:00:10.4561619+02:00 level=info msg="Completed cleanup jobs" duration=2.0963ms
+logger=cleanup t=2024-05-29T11:10:10.4546131+02:00 level=info msg="Completed cleanup jobs" duration=4.9005ms
+logger=context userId=0 orgId=0 uname= t=2024-05-29T11:14:39.2874188+02:00 level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=[::1] time_ms=3 duration=3.7577ms size=29 referer= handler=/
+logger=http.server t=2024-05-29T11:15:46.0620139+02:00 level=info msg="Successful Login" User=admin@localhost
+logger=context userId=1 orgId=1 uname=admin t=2024-05-29T11:16:26.5182736+02:00 level=info msg="Request Completed" method=GET path=/api/live/ws status=-1 remote_addr=[::1] time_ms=3 duration=3.3988ms size=0 referer= handler=/api/live/ws
+logger=cleanup t=2024-05-29T11:20:10.4536604+02:00 level=info msg="Completed cleanup jobs" duration=4.7362ms
+logger=settings t=2024-05-29T11:25:06.4248222+02:00 level=info msg="Starting Grafana" version=9.2.4 commit=64017e8ca6 branch=HEAD compiled=2022-11-08T11:38:42+01:00
+logger=settings t=2024-05-29T11:25:06.4268618+02:00 level=info msg="Config loaded from" file=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4/conf/defaults.ini
+logger=settings t=2024-05-29T11:25:06.4268618+02:00 level=info msg="Path Home" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4
+logger=settings t=2024-05-29T11:25:06.4273924+02:00 level=info msg="Path Data" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data
+logger=settings t=2024-05-29T11:25:06.4274486+02:00 level=info msg="Path Logs" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\log
+logger=settings t=2024-05-29T11:25:06.4274486+02:00 level=info msg="Path Plugins" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\plugins
+logger=settings t=2024-05-29T11:25:06.4279572+02:00 level=info msg="Path Provisioning" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\conf\provisioning
+logger=settings t=2024-05-29T11:25:06.4279572+02:00 level=info msg="App mode production"
+logger=sqlstore t=2024-05-29T11:25:06.4284941+02:00 level=info msg="Connecting to DB" dbtype=sqlite3
+logger=sqlstore t=2024-05-29T11:25:06.4284941+02:00 level=warn msg="SQLite database file has broader permissions than it should" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\grafana.db mode=-rw-rw-rw- expected=-rw-r-----
+logger=migrator t=2024-05-29T11:25:06.4519852+02:00 level=info msg="Starting DB migrations"
+logger=migrator t=2024-05-29T11:25:06.4562036+02:00 level=info msg="migrations completed" performed=0 skipped=452 duration=0s
+logger=plugin.loader t=2024-05-29T11:25:06.598109+02:00 level=info msg="Plugin registered" pluginID=input
+logger=plugin.finder t=2024-05-29T11:25:06.5991102+02:00 level=warn msg="Skipping finding plugins as directory does not exist" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\plugins
+logger=secrets t=2024-05-29T11:25:06.5999153+02:00 level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=query_data t=2024-05-29T11:25:06.6085506+02:00 level=info msg="Query Service initialization"
+logger=live.push_http t=2024-05-29T11:25:06.6115502+02:00 level=info msg="Live Push Gateway initialization"
+logger=infra.usagestats.collector t=2024-05-29T11:25:06.7075238+02:00 level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=provisioning.alerting t=2024-05-29T11:25:06.7104605+02:00 level=info msg="starting to provision alerting"
+logger=provisioning.alerting t=2024-05-29T11:25:06.7104605+02:00 level=info msg="finished to provision alerting"
+logger=ngalert t=2024-05-29T11:25:06.7113228+02:00 level=info msg="warming cache for startup"
+logger=grafanaStorageLogger t=2024-05-29T11:25:06.7113228+02:00 level=info msg="storage starting"
+logger=server t=2024-05-29T11:25:06.7179432+02:00 level=error msg="Stopped background service" service=*api.HTTPServer reason="failed to open listener on address 0.0.0.0:3000: listen tcp 0.0.0.0:3000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted."
+logger=tracing t=2024-05-29T11:25:06.7184489+02:00 level=info msg="Closing tracing"
+logger=auth t=2024-05-29T11:25:06.721113+02:00 level=error msg="failed to lock and execute cleanup of expired auth token" error="context canceled"
+logger=secret.migration t=2024-05-29T11:25:06.7275468+02:00 level=error msg="Stopped secret migration service" service=*migrations.DataSourceSecretMigrationService reason="context canceled"
+logger=infra.lockservice t=2024-05-29T11:25:06.728653+02:00 level=error msg="Failed to release the lock" error="context canceled"
+logger=infra.usagestats t=2024-05-29T11:25:06.7410778+02:00 level=error msg="Failed to get last sent time" error="context canceled"
+logger=provisioning.dashboard t=2024-05-29T11:25:06.7416097+02:00 level=warn msg="Failed to delete orphaned provisioned dashboards" err="context canceled"
+logger=serviceaccounts t=2024-05-29T11:25:06.7559843+02:00 level=warn msg="Failed to get usage metrics" error="context canceled"
+logger=ngalert t=2024-05-29T11:25:06.7728639+02:00 level=error msg="unable to fetch orgIds" msg="context canceled"
+logger=ngalert.multiorg.alertmanager t=2024-05-29T11:25:06.7728639+02:00 level=info msg="starting MultiOrg Alertmanager"
+logger=ticker t=2024-05-29T11:25:06.7728639+02:00 level=info msg=starting first_tick=2024-05-29T11:25:10+02:00
+logger=infra.usagestats.collector t=2024-05-29T11:25:06.7879909+02:00 level=error msg="Failed to get system stats" error="context canceled"
+logger=login.authinfo.store t=2024-05-29T11:25:06.8019864+02:00 level=warn msg="Failed to get authinfo metrics" error="context canceled"
+logger=server t=2024-05-29T11:25:06.8783038+02:00 level=error msg="Server shutdown" error="*api.HTTPServer run error: failed to open listener on address 0.0.0.0:3000: listen tcp 0.0.0.0:3000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted."
+logger=cleanup t=2024-05-29T11:30:10.4608666+02:00 level=info msg="Completed cleanup jobs" duration=6.9875ms
+logger=sqlstore.transactions t=2024-05-29T11:30:10.4690215+02:00 level=info msg="Database locked, sleeping then retrying" error="database is locked" retry=0
+logger=cleanup t=2024-05-29T11:40:10.4553947+02:00 level=info msg="Completed cleanup jobs" duration=4.9342ms
+logger=server t=2024-05-29T11:44:22.1064868+02:00 level=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2024-05-29T11:44:22.1070252+02:00 level=info msg="Closing tracing"
+logger=ticker t=2024-05-29T11:44:22.1070252+02:00 level=info msg=stopped last_tick=2024-05-29T11:44:20+02:00
+logger=settings t=2024-05-29T11:44:26.2579143+02:00 level=info msg="Starting Grafana" version=9.2.4 commit=64017e8ca6 branch=HEAD compiled=2022-11-08T11:38:42+01:00
+logger=settings t=2024-05-29T11:44:26.2589169+02:00 level=info msg="Config loaded from" file=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4/conf/defaults.ini
+logger=settings t=2024-05-29T11:44:26.2589169+02:00 level=info msg="Path Home" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4
+logger=settings t=2024-05-29T11:44:26.2589169+02:00 level=info msg="Path Data" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data
+logger=settings t=2024-05-29T11:44:26.2599187+02:00 level=info msg="Path Logs" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\log
+logger=settings t=2024-05-29T11:44:26.2599187+02:00 level=info msg="Path Plugins" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\plugins
+logger=settings t=2024-05-29T11:44:26.2599187+02:00 level=info msg="Path Provisioning" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\conf\provisioning
+logger=settings t=2024-05-29T11:44:26.2599187+02:00 level=info msg="App mode production"
+logger=sqlstore t=2024-05-29T11:44:26.260962+02:00 level=info msg="Connecting to DB" dbtype=sqlite3
+logger=sqlstore t=2024-05-29T11:44:26.260962+02:00 level=warn msg="SQLite database file has broader permissions than it should" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\grafana.db mode=-rw-rw-rw- expected=-rw-r-----
+logger=migrator t=2024-05-29T11:44:26.2848055+02:00 level=info msg="Starting DB migrations"
+logger=migrator t=2024-05-29T11:44:26.2906794+02:00 level=info msg="migrations completed" performed=0 skipped=452 duration=528.4µs
+logger=plugin.loader t=2024-05-29T11:44:26.3986703+02:00 level=info msg="Plugin registered" pluginID=input
+logger=plugin.finder t=2024-05-29T11:44:26.399208+02:00 level=warn msg="Skipping finding plugins as directory does not exist" path=C:\Users\marco\my_project\prometheus\grafana\grafana-9.2.4\data\plugins
+logger=secrets t=2024-05-29T11:44:26.4002814+02:00 level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=query_data t=2024-05-29T11:44:26.407274+02:00 level=info msg="Query Service initialization"
+logger=live.push_http t=2024-05-29T11:44:26.4135547+02:00 level=info msg="Live Push Gateway initialization"
+logger=infra.usagestats.collector t=2024-05-29T11:44:26.5243116+02:00 level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=provisioning.alerting t=2024-05-29T11:44:26.5273226+02:00 level=info msg="starting to provision alerting"
+logger=provisioning.alerting t=2024-05-29T11:44:26.5278391+02:00 level=info msg="finished to provision alerting"
+logger=ngalert t=2024-05-29T11:44:26.5278391+02:00 level=info msg="warming cache for startup"
+logger=grafanaStorageLogger t=2024-05-29T11:44:26.5284656+02:00 level=info msg="storage starting"
+logger=http.server t=2024-05-29T11:44:26.5363423+02:00 level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert.multiorg.alertmanager t=2024-05-29T11:44:26.5493075+02:00 level=info msg="starting MultiOrg Alertmanager"
+logger=ticker t=2024-05-29T11:44:26.5493075+02:00 level=info msg=starting first_tick=2024-05-29T11:44:30+02:00
+logger=context userId=1 orgId=1 uname=admin t=2024-05-29T11:44:26.9969174+02:00 level=info msg="Request Completed" method=GET path=/api/live/ws status=-1 remote_addr=[::1] time_ms=4 duration=4.7811ms size=0 referer= handler=/api/live/ws
+logger=cleanup t=2024-05-29T11:54:26.5451388+02:00 level=info msg="Completed cleanup jobs" duration=9.5163ms
+logger=cleanup t=2024-05-29T12:04:26.5372892+02:00 level=info msg="Completed cleanup jobs" duration=4.6805ms
+logger=cleanup t=2024-05-29T12:14:26.5393997+02:00 level=info msg="Completed cleanup jobs" duration=4.9459ms
+logger=cleanup t=2024-05-29T12:24:26.5417242+02:00 level=info msg="Completed cleanup jobs" duration=5.6991ms
+logger=cleanup t=2024-05-29T12:34:26.5381939+02:00 level=info msg="Completed cleanup jobs" duration=3.7924ms
+logger=cleanup t=2024-05-29T12:44:26.5884315+02:00 level=info msg="Completed cleanup jobs" duration=50.1402ms
+logger=cleanup t=2024-05-29T12:54:26.548494+02:00 level=info msg="Completed cleanup jobs" duration=4.9221ms
+logger=cleanup t=2024-05-29T13:04:26.5405121+02:00 level=info msg="Completed cleanup jobs" duration=3.5169ms
+logger=cleanup t=2024-05-29T13:14:26.5394825+02:00 level=info msg="Completed cleanup jobs" duration=4.9191ms
+logger=cleanup t=2024-05-29T13:24:26.5492997+02:00 level=info msg="Completed cleanup jobs" duration=5.504ms
+logger=cleanup t=2024-05-29T13:34:26.5384728+02:00 level=info msg="Completed cleanup jobs" duration=3.8544ms
+logger=cleanup t=2024-05-29T13:44:26.5762299+02:00 level=info msg="Completed cleanup jobs" duration=35.2463ms
+logger=cleanup t=2024-05-29T13:54:26.5378288+02:00 level=info msg="Completed cleanup jobs" duration=5.5546ms
+logger=cleanup t=2024-05-29T14:04:26.546281+02:00 level=info msg="Completed cleanup jobs" duration=5.6839ms
+logger=cleanup t=2024-05-29T14:14:26.5392499+02:00 level=info msg="Completed cleanup jobs" duration=4.7139ms
+logger=cleanup t=2024-05-29T14:24:26.5353345+02:00 level=info msg="Completed cleanup jobs" duration=3.9203ms
+logger=cleanup t=2024-05-29T14:34:26.5366521+02:00 level=info msg="Completed cleanup jobs" duration=4.5737ms
+logger=cleanup t=2024-05-29T14:44:26.5777446+02:00 level=info msg="Completed cleanup jobs" duration=35.4738ms
+logger=cleanup t=2024-05-29T14:54:26.5450071+02:00 level=info msg="Completed cleanup jobs" duration=4.0042ms
+logger=cleanup t=2024-05-29T15:04:26.5397513+02:00 level=info msg="Completed cleanup jobs" duration=4.5495ms
+logger=cleanup t=2024-05-29T15:14:26.540473+02:00 level=info msg="Completed cleanup jobs" duration=4.6982ms
+logger=cleanup t=2024-05-29T15:24:26.5358431+02:00 level=info msg="Completed cleanup jobs" duration=5.1054ms
+logger=cleanup t=2024-05-29T15:34:26.547124+02:00 level=info msg="Completed cleanup jobs" duration=4.5176ms
+logger=cleanup t=2024-05-29T15:44:26.5851077+02:00 level=info msg="Completed cleanup jobs" duration=51.2905ms
+logger=cleanup t=2024-05-29T15:54:26.537258+02:00 level=info msg="Completed cleanup jobs" duration=4.9271ms
+logger=cleanup t=2024-05-29T16:04:26.5466116+02:00 level=info msg="Completed cleanup jobs" duration=3.6304ms
+logger=cleanup t=2024-05-29T16:14:26.542841+02:00 level=info msg="Completed cleanup jobs" duration=4.2681ms
+logger=cleanup t=2024-05-29T16:24:26.5462179+02:00 level=info msg="Completed cleanup jobs" duration=8.9189ms
+logger=cleanup t=2024-05-29T16:34:26.542259+02:00 level=info msg="Completed cleanup jobs" duration=5.5078ms
+logger=cleanup t=2024-05-29T16:44:26.5406394+02:00 level=info msg="Completed cleanup jobs" duration=3.7209ms
+logger=cleanup t=2024-05-29T16:54:26.545489+02:00 level=info msg="Completed cleanup jobs" duration=4.7701ms
+logger=cleanup t=2024-05-29T17:04:26.5392354+02:00 level=info msg="Completed cleanup jobs" duration=8.2153ms
+logger=cleanup t=2024-05-29T17:14:26.5453695+02:00 level=info msg="Completed cleanup jobs" duration=6.8266ms
+logger=cleanup t=2024-05-29T17:24:26.5486843+02:00 level=info msg="Completed cleanup jobs" duration=8.2183ms
+logger=cleanup t=2024-05-29T17:34:26.547048+02:00 level=info msg="Completed cleanup jobs" duration=6.9304ms
+logger=cleanup t=2024-05-29T17:44:26.5821203+02:00 level=info msg="Completed cleanup jobs" duration=38.6151ms
+logger=cleanup t=2024-05-29T17:54:26.5501309+02:00 level=info msg="Completed cleanup jobs" duration=6.9989ms
+logger=cleanup t=2024-05-29T18:04:26.5472853+02:00 level=info msg="Completed cleanup jobs" duration=7.371ms
+logger=cleanup t=2024-05-29T18:14:26.5392741+02:00 level=info msg="Completed cleanup jobs" duration=7.9145ms
+logger=cleanup t=2024-05-29T18:24:26.5478599+02:00 level=info msg="Completed cleanup jobs" duration=7.315ms
+logger=cleanup t=2024-05-29T18:34:26.5440975+02:00 level=info msg="Completed cleanup jobs" duration=7.3999ms
+logger=cleanup t=2024-05-29T18:44:26.5764887+02:00 level=info msg="Completed cleanup jobs" duration=38.3309ms

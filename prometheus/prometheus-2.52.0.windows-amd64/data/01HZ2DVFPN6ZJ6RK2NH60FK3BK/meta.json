@@ -1,0 +1,17 @@
+{
+	"ulid": "01HZ2DVFPN6ZJ6RK2NH60FK3BK",
+	"minTime": 1716984002743,
+	"maxTime": 1716991200000,
+	"stats": {
+		"numSamples": 207840,
+		"numSeries": 433,
+		"numChunks": 1735
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01HZ2DVFPN6ZJ6RK2NH60FK3BK"
+		]
+	},
+	"version": 1
+}

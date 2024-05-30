@@ -1,0 +1,17 @@
+{
+	"ulid": "01HZ24CX2VDR55P02G97D28ZSZ",
+	"minTime": 1716974102737,
+	"maxTime": 1716976800000,
+	"stats": {
+		"numSamples": 81847,
+		"numSeries": 479,
+		"numChunks": 484
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01HZ24CX2VDR55P02G97D28ZSZ"
+		]
+	},
+	"version": 1
+}

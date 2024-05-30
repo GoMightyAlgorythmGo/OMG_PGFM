@@ -1,0 +1,52 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[6438],{29507:(e,t,r)=>{r.d(t,{x:()=>s});var n=r(68404),a=r(47570),i=r(45193);function s(e){const t=(0,a.I0)(),r=(0,n.useRef)(e);r.current=e,(0,n.useEffect)((()=>()=>{t((0,i.e)({cleanupAction:r.current}))}),[t])}},8122:(e,t,r)=>{r.d(t,{R:()=>o});r(68404);var n,a=r(48147),i=r(8771),s=r(45916);const o=()=>(0,s.jsxs)(i.b,{severity:"warning",title:"Global evalutation interval limit exceeded",children:["A minimum evaluation interval of ",(0,s.jsx)("strong",{children:a.v.unifiedAlerting.minInterval})," has been configured in Grafana.",n||(n=(0,s.jsx)("br",{})),"Please contact the administrator to configure a lower interval."]})},78316:(e,t,r)=>{r.d(t,{wO:()=>F,MD:()=>S});var n=r(27549),a=r(68404),i=r(59052),s=r(9617),o=r(84719),l=r(8397),c=r(1652),d=r(65586),u=r(91470),g=r(66322),v=r(91045),h=r(8122),p=r(61884),f=r(51542),x=r(45916);const m=["includeNoData","includeError"];const w=[{value:f.g0.Alerting,label:"Alerting"},{value:f.g0.NoData,label:"No Data"},{value:f.g0.OK,label:"OK"},{value:f.g0.Error,label:"Error"}],b=e=>{let{includeNoData:t,includeError:r}=e,n=function(e,t){if(null==e)return{};var r,n,a={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(a[r]=e[r]);return a}(e,m);const i=(0,a.useMemo)((()=>t?r?w:w.filter((e=>e.value!==f.g0.Error)):w.filter((e=>e.value!==f.g0.NoData))),[t,r]);return(0,x.jsx)(p.Ph,Object.assign({options:i},n))};var j=r(86207),y=r(22389);const $=["onChange","ref"],N=["onChange","ref"];var E,C;function O(e,t){if(null==e)return{};var r,n,a={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(a[r]=e[r]);return a}const S={required:{value:!0,message:"Required."},validate:e=>{try{const t=(0,g.nd)(e);return t<1e4?"Cannot be less than 10 seconds.":t%1e4==0||"Must be a multiple of 10 seconds."}catch(e){return e instanceof Error?e.message:"Failed to parse duration"}}},F=()=>{var e,t,r;const n=(0,s.wW)(k),[p,f]=(0,a.useState)(!1),{register:m,formState:{errors:w},watch:F}=(0,i.Gc)(),{exceedsLimit:A}=(0,u.f)(F("evaluateEvery")),D="eval-every-input",G="eval-for-input";return(0,x.jsxs)(y.z,{stepNo:2,title:"Alert evaluation behavior",children:[(0,x.jsx)(o.g,{label:"Evaluate",description:"Evaluation interval applies to every rule within a group. It can overwrite the interval of an existing alert rule.",children:(0,x.jsxs)("div",{className:n.flexRow,children:[(0,x.jsx)(l.W,{htmlFor:D,width:16,tooltip:"How often the alert will be evaluated to see if it fires",children:"Evaluate every"}),(0,x.jsx)(o.g,{className:n.inlineField,error:null===(e=w.evaluateEvery)||void 0===e?void 0:e.message,invalid:!!w.evaluateEvery,validationMessageHorizontalOverflow:!0,children:(0,x.jsx)(c.I,Object.assign({id:D,width:8},m("evaluateEvery",S)))}),(0,x.jsx)(l.W,{htmlFor:G,width:7,tooltip:'Once condition is breached, alert will go into pending state. If it is pending for longer than the "for" value, it will become a firing alert.',children:"for"}),(0,x.jsx)(o.g,{className:n.inlineField,error:null===(t=w.evaluateFor)||void 0===t?void 0:t.message,invalid:!(null===(r=w.evaluateFor)||void 0===r||!r.message),validationMessageHorizontalOverflow:!0,children:(0,x.jsx)(c.I,Object.assign({id:G,width:8},m("evaluateFor",(I=F("evaluateEvery"),{required:{value:!0,message:"Required."},validate:e=>{if("0"===e)return!0;try{const t=(0,g.nd)(e);if(0===t)return!0;try{return t>=(0,g.nd)(I)||"For duration must be greater than or equal to the evaluation interval."}catch(e){return!0}}catch(e){return e instanceof Error?e.message:"Failed to parse duration"}}}))))})]})}),A&&(E||(E=(0,x.jsx)(h.R,{}))),(0,x.jsx)(v.U,{isCollapsed:!p,onToggle:e=>f(!e),text:"Configure no data and error handling",className:n.collapseToggle}),p&&(0,x.jsxs)(x.Fragment,{children:[(0,x.jsx)(o.g,{htmlFor:"no-data-state-input",label:"Alert state if no data or all values are null",children:(0,x.jsx)(d.g,{render:e=>{let{field:{onChange:t}}=e,r=O(e.field,$);return(0,x.jsx)(b,Object.assign({},r,{inputId:"no-data-state-input",width:42,includeNoData:!0,includeError:!1,onChange:e=>t(null==e?void 0:e.value)}))},name:"noDataState"})}),(0,x.jsx)(o.g,{htmlFor:"exec-err-state-input",label:"Alert state if execution error or timeout",children:(0,x.jsx)(d.g,{render:e=>{let{field:{onChange:t}}=e,r=O(e.field,N);return(0,x.jsx)(b,Object.assign({},r,{inputId:"exec-err-state-input",width:42,includeNoData:!1,includeError:!0,onChange:e=>t(null==e?void 0:e.value)}))},name:"execErrState"})})]}),C||(C=(0,x.jsx)(j.Y,{}))]});var I},k=e=>({inlineField:n.css`
+    margin-bottom: 0;
+  `,flexRow:n.css`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  `,collapseToggle:n.css`
+    margin: ${e.spacing(2,0,2,-1)};
+  `,globalLimitValue:n.css`
+    font-weight: ${e.typography.fontWeightBold};
+  `})},86207:(e,t,r)=>{r.d(t,{Y:()=>L,u:()=>W});var n=r(27549),a=r(68404),i=r(59052),s=r(62124),o=r(63758),l=r(27494),c=r(5937),d=r(7501),u=r(9617),g=r(25049),v=r(40920),h=r(8771),p=r(71808),f=r(35778),x=r(14444),m=r(2027),w=r(2944),b=r(83044),j=r(75414),y=r(6932),$=r(54801);var N=r(88414),E=r(19462);function C(e,t,r){return(0,w.x)({whileLoading:O(r),source:(0,y.i)().fetch({method:"POST",url:`/api/v1/rule/test/${t}`,data:e}).pipe((0,f.U)((e=>{let{data:t}=e;return O(r,{state:c.Gu.Done,series:t.instances.map(b.vP)})})),(0,x.K)((e=>(0,p.of)(O(r,{state:c.Gu.Error,error:(0,$.P)(e)})))),(0,m.B)())})}function O(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return{ruleType:e,data:Object.assign({state:c.Gu.Loading,series:[],timeRange:(0,j.JK)()},t)}}var S,F,k=r(17569),A=r(87723),D=r(12954),G=r(4293),I=r(23357),q=r(8455),R=r(45916);function z(e){const{preview:t}=e,r=(0,u.wW)(M),n={defaults:{},overrides:[{matcher:{id:D.mi.byName,options:"Info"},properties:[{id:"custom.displayMode",value:I.h2.JSONView}]}]};if(!t)return null;const{data:a,ruleType:i}=t;return a.state===c.Gu.Loading?(0,R.jsx)("div",{className:r.container,children:S||(S=(0,R.jsx)("span",{children:"Loading preview..."}))}):a.state===c.Gu.Error?(0,R.jsx)("div",{className:r.container,children:a.error?(0,q.kk)(a.error):"Failed to preview alert rule"}):(0,R.jsxs)("div",{className:r.container,children:[(0,R.jsxs)("span",{children:["Preview based on the result of running the query, for this moment."," ",i===N.$.grafana?"Configuration for `no data` and `error handling` is not applied.":null]}),(0,R.jsx)("div",{className:r.table,children:(0,R.jsx)(A.Z,{children:e=>{let{width:t,height:r}=e;return(0,R.jsx)("div",{style:{width:`${t}px`,height:`${r}px`},children:(0,R.jsx)(G.$,{title:"",width:t,height:r,pluginId:"table",data:a,fieldConfig:n})})}})})]})}function M(e){return{container:n.css`
+      margin: ${e.spacing(2)} 0;
+    `,table:n.css`
+      flex: 1 1 auto;
+      height: 135px;
+      margin-top: ${e.spacing(2)};
+      border: 1px solid ${e.colors.border.medium};
+      border-radius: ${e.shape.borderRadius(1)};
+    `}}const P=["type","dataSourceName","condition","queries","expression"];function L(){const e=(0,u.wW)(T),[t,r]=W(),{watch:n}=(0,i.Gc)(),[a,s,o]=n(["type","condition","queries"]),{allDataSourcesAvailable:l}=(0,k.S)(o);if(a===N.$.cloudRecording||a===N.$.cloudAlerting)return null;const c=Boolean(s)&&l;return(0,R.jsxs)("div",{className:e.container,children:[(0,R.jsxs)(g.Lh,{children:[l&&(0,R.jsx)(v.zx,{disabled:!c,type:"button",variant:"primary",onClick:r,children:"Preview alerts"}),!l&&(F||(F=(0,R.jsx)(h.b,{title:"Preview is not available",severity:"warning",children:"Cannot display the query preview. Some of the data sources used in the queries are not available."})))]}),(0,R.jsx)(z,{preview:t})]})}function W(){const[e,t]=(0,a.useState)(),{getValues:r}=(0,i.Gc)(),n=(0,s.Z)();return[e,(0,a.useCallback)((()=>{const e=function(e){const[t,r,n,a,i]=e,s=(0,d.F)().getInstanceSettings(r);if(!s)throw new Error(`Cannot find data source settings for ${r}`);switch(t){case N.$.cloudAlerting:return{dataSourceUid:s.uid,dataSourceName:r,expr:i};case N.$.grafana:return{grafana_condition:{condition:n,data:a,now:(0,l.lf)(Date.now())}};default:throw new Error(`Alert type ${t} not supported by preview.`)}}(r(P));(function(e){if(function(e){return"expr"in e}(e))return C(e,e.dataSourceUid,N.$.cloudAlerting);if(function(e){return"grafana_condition"in e}(e))return C(e,E.GC,N.$.grafana);throw new Error("unsupported preview rule request")})(e).pipe((0,o.o)((e=>!function(e){switch(e.data.state){case c.Gu.Done:case c.Gu.Error:return!0;default:return!1}}(e)),!0)).subscribe((e=>{n()&&t(e)}))}),[r,n])]}function T(e){return{container:n.css`
+      margin-top: ${e.spacing(2)};
+      max-width: ${e.breakpoints.values.xxl}px;
+    `}}},22389:(e,t,r)=>{r.d(t,{z:()=>o});var n=r(27549),a=(r(68404),r(9617)),i=r(64624),s=r(45916);const o=e=>{let{title:t,stepNo:r,children:n,description:o}=e;const c=(0,a.wW)(l);return(0,s.jsxs)("div",{className:c.parent,children:[(0,s.jsx)("div",{children:(0,s.jsx)("span",{className:c.stepNo,children:r})}),(0,s.jsx)("div",{className:c.content,children:(0,s.jsxs)(i.C,{label:t,className:c.fieldset,children:[o&&(0,s.jsx)("p",{className:c.description,children:o}),n]})})]})},l=e=>({fieldset:n.css`
+    legend {
+      font-size: 16px;
+      padding-top: ${e.spacing(.5)};
+    }
+  `,parent:n.css`
+    display: flex;
+    flex-direction: row;
+    max-width: ${e.breakpoints.values.xl};
+    & + & {
+      margin-top: ${e.spacing(4)};
+    }
+  `,description:n.css`
+    margin-top: -${e.spacing(2)};
+    color: ${e.colors.text.secondary};
+  `,stepNo:n.css`
+    display: inline-block;
+    width: ${e.spacing(4)};
+    height: ${e.spacing(4)};
+    line-height: ${e.spacing(4)};
+    border-radius: ${e.spacing(4)};
+    text-align: center;
+    color: ${e.colors.text.maxContrast};
+    background-color: ${e.colors.background.canvas};
+    font-size: ${e.typography.size.lg};
+    margin-right: ${e.spacing(2)};
+  `,content:n.css`
+    flex: 1;
+  `})},17569:(e,t,r)=>{r.d(t,{S:()=>i});var n=r(68404),a=r(7501);function i(e){return{allDataSourcesAvailable:(0,n.useMemo)((()=>e.every((e=>Boolean((0,a.F)().getInstanceSettings(e.datasourceUid))))),[e])}}},69450:(e,t,r)=>{r.d(t,{B:()=>i});var n=r(68404),a=r(82969);function i(){return(0,n.useMemo)((()=>(0,a.Rv)()),[])}}}]);
+//# sourceMappingURL=6438.6ff1fba29b6c5fd8314e.js.map

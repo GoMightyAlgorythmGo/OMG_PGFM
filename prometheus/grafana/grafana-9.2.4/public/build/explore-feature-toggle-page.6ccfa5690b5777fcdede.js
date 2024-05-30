@@ -1,0 +1,4 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[172],{53324:(e,n,a)=>{a.r(n),a.d(n,{default:()=>t});var s,r=a(27549),l=(a(68404),a(9617)),i=a(90894),c=a(45916);function t(){const e=(0,l.wW)((e=>r.css`
+        margin-top: ${e.spacing(2)};
+      `));return(0,c.jsx)(i.T,{className:e,children:s||(s=(0,c.jsxs)(i.T.Contents,{children:[(0,c.jsx)("h1",{children:"Explore is disabled"}),"To enable Explore, enable it in the Grafana config:",(0,c.jsx)("div",{children:(0,c.jsx)("pre",{children:"[explore]\nenable = true\n"})})]}))})}}}]);
+//# sourceMappingURL=explore-feature-toggle-page.6ccfa5690b5777fcdede.js.map
