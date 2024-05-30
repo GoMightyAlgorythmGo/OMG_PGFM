@@ -1,4 +1,5 @@
-﻿*.pyc
+﻿prometheus/prometheus-2.52.0.windows-amd64/data/lock
+*.pyc
 *.zip
 *.tar.gz
 *.bin
