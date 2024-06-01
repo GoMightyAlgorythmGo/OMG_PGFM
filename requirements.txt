@@ -2,4 +2,7 @@ numpy
 pandas
 scikit-learn
 jupyter
+<<<<<<< HEAD
+=======
 pytest
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a

@@ -69,11 +69,14 @@ div.relations {
 }
 
 
+<<<<<<< HEAD
+=======
 div.sphinxsidebar {
     max-height: 100%;
     overflow-y: auto;
 }
 
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
 div.sphinxsidebar a {
     color: #444;
     text-decoration: none;
@@ -160,6 +163,8 @@ div.sphinxsidebar input {
     font-size: 1em;
 }
 
+<<<<<<< HEAD
+=======
 div.sphinxsidebar #searchbox input[type="text"] {
     width: 160px;
 }
@@ -168,6 +173,7 @@ div.sphinxsidebar .search > div {
     display: table-cell;
 }
 
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
 div.sphinxsidebar hr {
     border: none;
     height: 1px;
@@ -651,7 +657,19 @@ a:hover tt, a:hover code {
     display: none!important;
 }
 
+<<<<<<< HEAD
+/* Make nested-list/multi-paragraph items look better in Releases changelog
+ * pages. Without this, docutils' magical list fuckery causes inconsistent
+ * formatting between different release sub-lists.
+ */
+div#changelog > div.section > ul > li > p:only-child {
+    margin-bottom: 0;
+}
+
+/* Hide fugly table cell borders in ..bibliography:: directive output */
+=======
 /* Hide ugly table cell borders in ..bibliography:: directive output */
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
 table.docutils.citation, table.docutils.citation td, table.docutils.citation th {
   border: none;
   /* Below needed in some edge cases; if not applied, bottom shadows appear */

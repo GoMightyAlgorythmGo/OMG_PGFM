@@ -29,19 +29,29 @@ const _highlight = (node, addItems, text, className) => {
       }
 
       span.appendChild(document.createTextNode(val.substr(pos, text.length)));
+<<<<<<< HEAD
+      parent.insertBefore(
+        span,
+        parent.insertBefore(
+          document.createTextNode(val.substr(pos + text.length)),
+=======
       const rest = document.createTextNode(val.substr(pos + text.length));
       parent.insertBefore(
         span,
         parent.insertBefore(
           rest,
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
           node.nextSibling
         )
       );
       node.nodeValue = val.substr(0, pos);
+<<<<<<< HEAD
+=======
       /* There may be more occurrences of search term in this node. So call this
        * function recursively on the remaining fragment.
        */
       _highlight(rest, addItems, text, className);
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
 
       if (isInSVG) {
         const rect = document.createElementNS(
@@ -145,6 +155,10 @@ const SphinxHighlight = {
   },
 };
 
+<<<<<<< HEAD
+_ready(SphinxHighlight.highlightSearchWords);
+_ready(SphinxHighlight.initEscapeListener);
+=======
 _ready(() => {
   /* Do not call highlightSearchWords() when we are on the search page.
    * It will highlight words from the *previous* search query.
@@ -152,3 +166,4 @@ _ready(() => {
   if (typeof Search === "undefined") SphinxHighlight.highlightSearchWords();
   SphinxHighlight.initEscapeListener();
 });
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a

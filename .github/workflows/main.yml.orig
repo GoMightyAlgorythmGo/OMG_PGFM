@@ -1,0 +1,66 @@
+﻿name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+<<<<<<< HEAD
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx
+    - name: Build Docs
+      run: sphinx-build -b html docs/source docs/build
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add docs/build
+        git commit -m "Automated update of documentation"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.CLASSICAL_PAT }}
+=======
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          pytest
+      - name: Generate Documentation
+        run: |
+          sphinx-build -b html docs/source docs/build
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
+      - name: Move Trello card on success
+        if: success()
+        run: |
+          python scripts/move_trello_card.py
+        env:
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
+          DONE_LIST_ID: ${{ secrets.DONE_LIST_ID }}
+      - name: Send notification on failure
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Documentation update failed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
+>>>>>>> df1e9abbd4dc03f06434711a6f0aa01328f46f3a
