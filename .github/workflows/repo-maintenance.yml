@@ -1,0 +1,49 @@
+﻿name: Repository Maintenance
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at midnight
+
+jobs:
+  repo_maintenance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
+      - name: Remove large files manually
+        run: |
+          rm -f prometheus/prometheus-2.52.0.windows-amd64/data/chunks_head/000004
+          rm -f prometheus/prometheus-2.52.0.windows-amd64/data/chunks_head/000005
+
+      - name: Update .gitignore
+        run: |
+          echo 'prometheus-2.52.0.windows-amd64/data/chunks_head/000004' >> .gitignore
+          echo 'prometheus-2.52.0.windows-amd64/data/chunks_head/000005' >> .gitignore
+          git add .gitignore
+          git commit -m 'Update .gitignore to exclude large files'
+
+      - name: Use BFG Repo-Cleaner
+        run: |
+          java -jar /path/to/bfg.jar --strip-blobs-bigger-than 100M .
+          java -jar /path/to/bfg.jar --delete-files '0cdcac6eb1aa268b98e2cc30f80a183e2bc81dba' .
+          java -jar /path/to/bfg.jar --delete-files '5b44edb4c90a21f3f2ccc3f50411ac1825f8cc0b' .
+
+      - name: Clean up repository
+        run: |
+          git reflog expire --expire=now --all
+          git gc --prune=now --aggressive
+
+      - name: Force push changes
+        run: git push origin master --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
